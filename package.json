@@ -1,0 +1,24 @@
+{
+  "name": "odin-restaurant",
+  "version": "1.0.0",
+  "description": "Framework for developing static webpages using the Slim templating language.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brxck/odin-restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brxck/odin-restaurant/issues"
+  },
+  "homepage": "https://github.com/brxck/odin-restaurant#readme",
+  "devDependencies": {
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  },
+  "dependencies": {}
+}
