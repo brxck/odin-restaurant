@@ -68,7 +68,6 @@ const contact = () => {
   textField.className = "input"
   textField.type = "text"
   textField.placeholder = "Send a message into the void!"
-  textField.rows = 3
 
   const submitButton = document.createElement("button")
   submitButton.className = "button is-info"

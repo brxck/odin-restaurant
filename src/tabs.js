@@ -1,12 +1,12 @@
 const tabs = (tabs) => {
   const tabsElement = document.createElement("div")
   const tabsList = document.createElement("ul")
-  tabsElement.className = "tabs"
+  tabsElement.className = "tabs is-centered"
   tabsElement.appendChild(tabsList)
 
   const fragment = document.createDocumentFragment()
   const tabView = document.createElement("div")
-  tabView.style.width = "20%"
+  tabView.className = "container has-text-centered"
   fragment.appendChild(tabsElement)
   fragment.appendChild(tabView)
 
