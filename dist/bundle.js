@@ -79,7 +79,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst header = () => {\n  let headerElement = document.createElement(\"h1\")\n  headerElement.textContent = \"odin-restaurant\"\n  \n  return headerElement\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (header);\n\n//# sourceURL=webpack:///./src/header.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst header = () => {\n  let headerElement = document.createElement(\"div\")\n  headerElement.className = \"section\"\n\n  let titleElement = document.createElement(\"h1\")  \n  titleElement.textContent = \"odin-restaurant\"\n  titleElement.className = \"title\"\n  headerElement.appendChild(titleElement)\n  \n  return headerElement\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (header);\n\n//# sourceURL=webpack:///./src/header.js?");
 
 /***/ }),
 
@@ -91,7 +91,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst header = () => {\n  let
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render.js\");\n\n\n\nconst elements = [Object(_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()]\n\nObject(_render__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(elements)\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render.js\");\n/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ \"./src/tabs.js\");\n\n\n\n\nconst tabList = [\n                  {title: \"About\"}, \n                  {title: \"Menu\"},\n                  {title: \"Contact\"}\n                ]\n\nconst elements = [Object(_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(), Object(_tabs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(tabList)]\n\nObject(_render__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(elements)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -104,6 +104,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hea
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst contentDiv = document.getElementById(\"content\")\n\nconst render = (elements) => {\n  for (let i in elements) {\n    contentDiv.append(elements[i])\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (render);\n\n//# sourceURL=webpack:///./src/render.js?");
+
+/***/ }),
+
+/***/ "./src/tabs.js":
+/*!*********************!*\
+  !*** ./src/tabs.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst tabs = (tabs) => {\n  const tabsElement = document.createElement(\"div\")\n  const tabsList = document.createElement(\"ul\")\n  tabsElement.className = \"tabs\"\n  tabsElement.appendChild(tabsList)\n\n  tabs.forEach(tab => createTab(tab, tabsList))\n\n  return tabsElement\n}\n\nconst createTab = (tab, tabsList) => {\n  let newTab = document.createElement(\"li\")\n  newTab.innerHTML = `<a>${tab.title}</a>`\n  // on click for content\n\n  tabsList.append(newTab)\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tabs);\n\n//# sourceURL=webpack:///./src/tabs.js?");
 
 /***/ })
 
