@@ -1,3 +1,29 @@
+const header = () => {
+  let headerElement = document.createElement("div")
+  headerElement.className = "section"
+
+  let titleElement = document.createElement("h1")  
+  titleElement.innerHTML = "<em>JS</em>oe's Diner"
+  titleElement.className = "title"
+  headerElement.appendChild(titleElement)
+  
+  return headerElement
+}
+
+const footer = () => {
+  const footerElement = document.createElement("div")
+  footerElement.className = "footer has-text-centered"
+  footerElement.style.cssText = `position: fixed;
+                                 width: inherit;
+                                 bottom: 0;
+                                 overflow:hidden;`
+
+  footerElement.innerHTML = `<p>This is a webpage made using only JavaScript.</p>`
+  footerElement.innerHTML += `<p>Check it out on <a href="https://github.com/brxck/odin-restaurant">GitHub.</a></p>`
+
+  return footerElement
+}
+
 const about = () => {
   const aboutElement = document.createElement("div")
 
@@ -54,4 +80,4 @@ const contact = () => {
   return contactElement
 }
 
-export { about, menu, contact }
+export { header, footer, about, menu, contact }

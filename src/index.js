@@ -1,8 +1,6 @@
-import header from "./header"
-import footer from "./footer"
 import render from "./render"
 import tabs from "./tabs"
-import { about, menu, contact } from "./content"
+import { header, footer, about, menu, contact } from "./content"
 
 const tabList = [
                   {title: "About", content: about()}, 
