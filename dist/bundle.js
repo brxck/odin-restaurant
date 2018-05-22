@@ -71,6 +71,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/footer.js":
+/*!***********************!*\
+  !*** ./src/footer.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst footer = () => {\n  const footerElement = document.createElement(\"div\")\n  footerElement.className = \"footer has-text-centered\"\n  footerElement.style.cssText = `position: fixed;\n                                 width: inherit;\n                                 bottom: 0;\n                                 overflow:hidden;`\n\n  footerElement.innerHTML = `<p>This is a webpage made using only JavaScript.</p>`\n  footerElement.innerHTML += `<p>Check it out on <a href=\"https://github.com/brxck/odin-restaurant\">GitHub.</a></p>`\n\n  return footerElement\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (footer);\n\n//# sourceURL=webpack:///./src/footer.js?");
+
+/***/ }),
+
 /***/ "./src/header.js":
 /*!***********************!*\
   !*** ./src/header.js ***!
@@ -91,7 +103,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst header = () => {\n  let
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render */ \"./src/render.js\");\n/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tabs */ \"./src/tabs.js\");\n\n\n\n\nconst tabList = [\n                  {title: \"About\", content: \"about\"}, \n                  {title: \"Menu\", content: \"menu\"},\n                  {title: \"Contact\", content: \"contact\"}\n                ]\n\nconst elements = [Object(_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(), Object(_tabs__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(tabList)]\n\nObject(_render__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(elements)\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ \"./src/footer.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render */ \"./src/render.js\");\n/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tabs */ \"./src/tabs.js\");\n\n\n\n\n\nconst tabList = [\n                  {title: \"About\", content: \"about\"}, \n                  {title: \"Menu\", content: \"menu\"},\n                  {title: \"Contact\", content: \"contact\"}\n                ]\n\nconst elements = [Object(_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(), Object(_tabs__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(tabList), Object(_footer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()]\n\nObject(_render__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(elements)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -115,7 +127,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst contentDiv = document.g
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst tabs = (tabs) => {\n  const tabsElement = document.createElement(\"div\")\n  const tabsList = document.createElement(\"ul\")\n  tabsElement.className = \"tabs\"\n  tabsElement.appendChild(tabsList)\n\n  const fragment = document.createDocumentFragment()\n  const tabView = document.createElement(\"div\")\n  fragment.appendChild(tabsElement)\n  fragment.appendChild(tabView)\n\n  tabs.forEach(tab => createTab(tab, tabsList, tabView))\n\n  return fragment\n}\n\nconst createTab = (tab, tabsList, tabView) => {\n  let newTab = document.createElement(\"li\")\n  newTab.innerHTML = `<a>${tab.title}</a>`\n  newTab.addEventListener(\"click\", () => {\n    tabView.innerHTML = \"\"\n    tabView.append(tab.content)\n  })\n\n  tabsList.append(newTab)\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tabs);\n\n//# sourceURL=webpack:///./src/tabs.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst tabs = (tabs) => {\n  const tabsElement = document.createElement(\"div\")\n  const tabsList = document.createElement(\"ul\")\n  tabsElement.className = \"tabs\"\n  tabsElement.appendChild(tabsList)\n\n  const fragment = document.createDocumentFragment()\n  const tabView = document.createElement(\"div\")\n  fragment.appendChild(tabsElement)\n  fragment.appendChild(tabView)\n\n  tabs.forEach(tab => createTab(tab, tabsList, tabView))\n\n  // Make first tab active by simulating mouseclick\n  tabsList.firstChild.dispatchEvent(new Event(\"click\"))\n\n  return fragment\n}\n\nconst createTab = (tab, tabsList, tabView) => {\n  let newTab = document.createElement(\"li\")\n  newTab.innerHTML = `<a>${tab.title}</a>`\n\n  // Make tab visible and toggle status on click\n  newTab.addEventListener(\"click\", () => {\n    tabView.innerHTML = \"\"\n    tabView.append(tab.content)\n\n    Array.from(tabsList.children).forEach(tab => { tab.className = \"\" })\n    newTab.className = \"is-active\"\n  })\n\n  tabsList.append(newTab)\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (tabs);\n\n//# sourceURL=webpack:///./src/tabs.js?");
 
 /***/ })
 

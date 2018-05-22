@@ -1,4 +1,5 @@
 import header from "./header"
+import footer from "./footer"
 import render from "./render"
 import tabs from "./tabs"
 
@@ -8,6 +9,6 @@ const tabList = [
                   {title: "Contact", content: "contact"}
                 ]
 
-const elements = [header(), tabs(tabList)]
+const elements = [header(), tabs(tabList), footer()]
 
 render(elements)
