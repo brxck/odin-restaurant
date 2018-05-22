@@ -4,15 +4,23 @@ const tabs = (tabs) => {
   tabsElement.className = "tabs"
   tabsElement.appendChild(tabsList)
 
-  tabs.forEach(tab => createTab(tab, tabsList))
+  const fragment = document.createDocumentFragment()
+  const tabView = document.createElement("div")
+  fragment.appendChild(tabsElement)
+  fragment.appendChild(tabView)
 
-  return tabsElement
+  tabs.forEach(tab => createTab(tab, tabsList, tabView))
+
+  return fragment
 }
 
-const createTab = (tab, tabsList) => {
+const createTab = (tab, tabsList, tabView) => {
   let newTab = document.createElement("li")
   newTab.innerHTML = `<a>${tab.title}</a>`
-  // on click for content
+  newTab.addEventListener("click", () => {
+    tabView.innerHTML = ""
+    tabView.append(tab.content)
+  })
 
   tabsList.append(newTab)
 }
