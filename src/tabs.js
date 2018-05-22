@@ -6,6 +6,7 @@ const tabs = (tabs) => {
 
   const fragment = document.createDocumentFragment()
   const tabView = document.createElement("div")
+  tabView.style.width = "20%"
   fragment.appendChild(tabsElement)
   fragment.appendChild(tabView)
 

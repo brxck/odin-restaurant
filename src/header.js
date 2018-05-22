@@ -3,7 +3,7 @@ const header = () => {
   headerElement.className = "section"
 
   let titleElement = document.createElement("h1")  
-  titleElement.textContent = "odin-restaurant"
+  titleElement.innerHTML = "<em>JS</em>oe's Diner"
   titleElement.className = "title"
   headerElement.appendChild(titleElement)
   
